@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Grooming Appointment</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="hero_area">
+        <header class="header_section">
+            <div class="container-fluid">
+                <!-- Your navigation bar here (similar to the one in the index page) -->
+            </div>
+        </header>
+    </div>
+    
+    <div class="container mt-5">
+        <h1 class="custom_heading">Pet Grooming Appointment</h1>
+        <form action="{% url 'submit_booking' %}" method="POST">
+            {% csrf_token %} 
+            <div class="form-group">
+                <label for="pet_name">Pet's Name:</label>
+                <input type="text" class="form-control" id="pet_name" name="pet_name" required>
+            </div>
+            <div class="form-group">
+                <label for="pet_type">Pet Type:</label>
+                <select class="form-control" id="pet_type" name="pet_type" required>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="appointment_date">Appointment Date:</label>
+                <input type="date" class="form-control" id="appointment_date" name="appointment_date" required>
+            </div>
+            <div class="form-group">
+                <label for="special_requests">Special Requests:</label>
+                <textarea class="form-control" id="special_requests" name="special_requests" rows="4" cols="50"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="owner_name">Your Name:</label>
+                <input type="text" class="form-control" id="owner_name" name="owner_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Appointment</button>
+        </form>
+    </div>
+
+    <!-- Include your footer section similar to the index page -->
+    
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

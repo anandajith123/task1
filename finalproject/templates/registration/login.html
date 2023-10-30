@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .login-container {
+    background-color: skyblue;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+  }
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .password-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .password-toggle {
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %} 
+      <label for="username">Username</label>
+      <input type="text" placeholder="Enter Username" id="username" name="username">
+
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" id="password" name="password">
+      
+
+      <button type="submit">Log In</button>
+    </form>
+    <p>Don't have an account? <a href="{% url 'signup' %}">Create an Account</a></p>
+
+  </div>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const passwordToggle = document.getElementById('passwordToggle');
+    
+    passwordToggle.addEventListener('click', () => {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    });
+  </script>
+</body>
+</html>

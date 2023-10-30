@@ -1,0 +1,49 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background-color: skyblue;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.password-toggle {
+    cursor: pointer;
+}
+
+.options {
+    margin-top: 20px;
+}
+
+.options a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+}
